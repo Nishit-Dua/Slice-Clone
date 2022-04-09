@@ -10,7 +10,7 @@ class TopOfferCard extends StatelessWidget {
     return Container(
       height: 220,
       clipBehavior: Clip.hardEdge,
-      margin: const EdgeInsets.only(top: 25),
+      margin: const EdgeInsets.only(bottom: 25),
       decoration: BoxDecoration(
         color: Colors.blueGrey.shade200,
         borderRadius: BorderRadius.circular(20),
@@ -35,11 +35,11 @@ class TopOfferCard extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    "Lorem Ipsum is simply dummy text of the printing and",
+                    "Lorem Ipsum is simply dummy text of",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
-                        fontWeight: FontWeight.w700),
+                        fontWeight: FontWeight.bold),
                   ),
                 ],
               ),

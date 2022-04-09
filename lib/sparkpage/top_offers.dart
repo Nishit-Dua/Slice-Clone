@@ -6,19 +6,31 @@ class TopOffers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.all(30),
-      // ignore: prefer_const_literals_to_create_immutables
-      children: [
-        Text("Shop from your favourite brands"),
-        TopOfferCard(),
-        TopOfferCard(),
-        TopOfferCard(),
-        TopOfferCard(),
-        TopOfferCard(),
-        TopOfferCard(),
-        TopOfferCard(),
-      ],
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(30, 20, 30, 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Shop from your favourite brands",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+          ),
+          SizedBox(height: 30),
+          Expanded(
+            child: ListView(
+              children: [
+                TopOfferCard(),
+                TopOfferCard(),
+                TopOfferCard(),
+                TopOfferCard(),
+                TopOfferCard(),
+                TopOfferCard(),
+                TopOfferCard(),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

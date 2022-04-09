@@ -12,18 +12,21 @@ class CustomSliceAppBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             RichText(
-                text: TextSpan(
-                    text: "🧑🏼‍🦱   ",
-                    style: TextStyle(
-                      color: Colors.black87,
-                      fontSize: 24,
-                    ),
-                    children: const <TextSpan>[
+              text: TextSpan(
+                text: "🧑🏼‍🦱   ",
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontFamily: "SliceFont",
+                  fontSize: 22,
+                ),
+                children: const <TextSpan>[
                   TextSpan(text: "hi "),
                   TextSpan(
                       text: "Nishit",
                       style: TextStyle(fontWeight: FontWeight.bold))
-                ])),
+                ],
+              ),
+            ),
             Icon(
               Icons.credit_score,
               size: 28,

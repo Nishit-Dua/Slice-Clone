@@ -67,7 +67,8 @@ class SparkOfferTile extends StatelessWidget {
             ),
             Text(
               offerDetails,
-              style: TextStyle(color: sparkColor, fontSize: 20),
+              style: TextStyle(
+                  color: sparkColor, fontSize: 20, fontWeight: FontWeight.w600),
             ),
             SizedBox(),
             Row(

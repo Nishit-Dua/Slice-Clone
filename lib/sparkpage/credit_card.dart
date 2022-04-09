@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
 class CreditCard extends StatelessWidget {
@@ -5,7 +6,7 @@ class CreditCard extends StatelessWidget {
 
   const CreditCard({
     Key? key,
-    this.isSparkActive = false,
+    this.isSparkActive = true,
   }) : super(key: key);
 
   @override
@@ -13,7 +14,7 @@ class CreditCard extends StatelessWidget {
     return Container(
       height: 250,
       margin: EdgeInsets.all(15),
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       decoration: BoxDecoration(
         color: Color.fromARGB(249, 251, 253, 255),
         borderRadius: BorderRadius.circular(10),
@@ -22,37 +23,146 @@ class CreditCard extends StatelessWidget {
         ],
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            children: [
-              if (isSparkActive)
+          // Column(
+          //   children: [
+          if (isSparkActive)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // *If Sparked
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // *If Sparked
-                    // comapy logo
+                    // comapny logo
+                    CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Image.asset("assets/Company Logo/apple.png")),
                     // company name
+                    SizedBox(height: 14),
+                    Text(
+                      "Apple",
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
                     // discount stuff
-
-                    // time left
+                    SizedBox(height: 14),
+                    Text(
+                      "Get 10% off Cashback",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
-                )
+                ),
 
-              // *Else
-              else
+                // time left
                 Row(
                   children: [
-                    // Row of circle and No spark active
+                    Icon(Icons.access_time),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text("3 days left")
                   ],
                 )
-            ],
-          ),
+              ],
+            )
+
+          // *Else
+          else
+            Row(
+              children: [
+                DottedBorder(
+                  color: Colors.blueGrey.shade400,
+                  strokeCap: StrokeCap.round,
+                  dashPattern: [2, 4],
+                  borderType: BorderType.RRect,
+                  radius: Radius.circular(1200),
+                  padding: EdgeInsets.all(6),
+                  child: SizedBox(
+                    height: 30,
+                    width: 30,
+                    // color: Colors.amber,
+                  ),
+                ),
+                SizedBox(width: 14),
+                Text(
+                  "No spark\nactive",
+                  style: TextStyle(color: Colors.blueGrey.shade400),
+                )
+                // Row of circle and No spark active
+              ],
+            )
+          //   ],
+          // ),
+          ,
+          _CardNumAndVisaImage()
+        ],
+      ),
+    );
+  }
+}
+
+class _CardNumAndVisaImage extends StatelessWidget {
+  const _CardNumAndVisaImage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0, right: 8),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          // credit Card num
           Column(
             children: [
-              // credit Card num
+              Text(
+                "* * * * |",
+                style: TextStyle(
+                  fontSize: 20,
+                  decoration: TextDecoration.underline,
+                  color: Colors.blueGrey.shade500,
+                ),
+              ),
+              Text(
+                "| * * * *",
+                style: TextStyle(
+                  fontSize: 20,
+                  decoration: TextDecoration.underline,
+                  color: Colors.blueGrey.shade500,
+                ),
+              ),
+              Text(
+                "* * * * |",
+                style: TextStyle(
+                  fontSize: 20,
+                  decoration: TextDecoration.underline,
+                  color: Colors.blueGrey.shade500,
+                ),
+              ),
+              Text(
+                "| 4 0 2 0",
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.blueGrey.shade500,
+                ),
+              ),
               // visa image?
             ],
-          )
+          ),
+          Image.asset(
+            "assets/Company Logo/visa.png",
+            width: 90,
+            color: Colors.blueGrey.shade600,
+          ),
         ],
       ),
     );

@@ -18,8 +18,7 @@ class CustomTabBar extends StatelessWidget {
             child: TabBar(
               padding: const EdgeInsets.only(top: 2),
               isScrollable: true,
-              unselectedLabelStyle:
-                  const TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+              unselectedLabelStyle: const TextStyle(fontSize: 18),
               unselectedLabelColor: Colors.black26,
 
               labelStyle:

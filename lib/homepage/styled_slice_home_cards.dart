@@ -26,10 +26,10 @@ class HomeCard2 extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "₺ 13,420",
+                  "¥ 13,420",
                   style: TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 44,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 SizedBox(height: 8),
@@ -37,7 +37,7 @@ class HomeCard2 extends StatelessWidget {
                   "All that you've earned from your slice\ncard",
                   style: TextStyle(
                     fontSize: 16,
-                    letterSpacing: .5,
+                    // letterSpacing: .5,
                     color: Colors.grey.shade600,
                   ),
                 ),
@@ -97,13 +97,13 @@ class HomeCard1 extends StatelessWidget {
                   fontSize: 15,
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 5),
               Text(
                 "\u{20B9} 69",
                 style: TextStyle(
-                  fontSize: 50,
+                  fontSize: 40,
                   color: Colors.deepPurple,
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.bold,
                 ),
               )
             ],
@@ -168,7 +168,7 @@ class HomeCard1 extends StatelessWidget {
                             "Rate Us",
                             style: TextStyle(
                               fontSize: 13,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ],
