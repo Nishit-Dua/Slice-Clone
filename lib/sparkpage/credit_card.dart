@@ -54,7 +54,7 @@ class CreditCard extends StatelessWidget {
                       "Get 10% off Cashback",
                       style: TextStyle(
                         fontSize: 22,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ],

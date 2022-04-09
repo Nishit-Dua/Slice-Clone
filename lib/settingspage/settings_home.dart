@@ -12,11 +12,90 @@ class SettingsHome extends StatelessWidget {
             // Thick boi with Image and balance
             SettingsTopBarThing(),
             // several List Tiles
-
+            SizedBox(height: 30),
+            CustomListTileWithDivider(
+              title: "Invite Friends",
+              subtitle: "Earn \u{20B9} 300",
+              icon: Icons.keyboard_arrow_right_rounded,
+            ),
+            CustomListTileWithDivider(
+              title: "Help & Support",
+              subtitle: "General Queries, FAQs",
+              icon: Icons.keyboard_arrow_right_rounded,
+            ),
+            CustomListTileWithDivider(
+              title: "Pricing",
+              subtitle: "Information About all charges",
+              icon: Icons.keyboard_arrow_right_rounded,
+            ),
+            CustomListTileWithDivider(
+              title: "Validity",
+              subtitle: "Your account's validity information",
+              icon: Icons.keyboard_arrow_right_rounded,
+            ),
+            CustomListTileWithDivider(
+              title: "Financial Partners",
+              subtitle: "Contact details",
+              icon: Icons.keyboard_arrow_right_rounded,
+            ),
+            CustomListTileWithDivider(
+              title: "Settings",
+              subtitle: "Settings & preferences",
+              icon: Icons.keyboard_arrow_right_rounded,
+            ),
+            CustomListTileWithDivider(
+              title: "Log out",
+              subtitle: "",
+              icon: Icons.logout,
+            ),
             // version number
           ],
         ),
       ),
+    );
+  }
+}
+
+class CustomListTileWithDivider extends StatelessWidget {
+  final bool hasDivider;
+  final String title;
+  final String subtitle;
+  final IconData icon;
+
+  const CustomListTileWithDivider({
+    Key? key,
+    required this.title,
+    this.subtitle = "",
+    required this.icon,
+    this.hasDivider = true,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ListTile(
+          contentPadding: EdgeInsets.only(left: 30, right: 40),
+          title: Text(title),
+          subtitle: subtitle.isNotEmpty
+              ? Text(
+                  subtitle,
+                  style:
+                      TextStyle(fontSize: 12, color: Colors.blueGrey.shade400),
+                )
+              : null,
+          trailing: Icon(
+            icon,
+            color: Colors.black,
+            size: 18,
+          ),
+        ),
+        if (hasDivider)
+          Divider(
+            indent: 30,
+            endIndent: 40,
+          ),
+      ],
     );
   }
 }

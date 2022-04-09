@@ -7,6 +7,7 @@ import 'package:good_project/sparkpage/spark_home.dart';
 import 'cashpage/cashpage_home.dart';
 
 void main(List<String> args) {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       systemNavigationBarColor: Colors.white,
@@ -14,7 +15,9 @@ void main(List<String> args) {
       statusBarIconBrightness: Brightness.dark,
     ),
   );
-  runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]).then((value) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
